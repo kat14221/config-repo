@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: g
+
+server:
+  port: 8080
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
