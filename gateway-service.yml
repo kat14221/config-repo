@@ -1,6 +1,8 @@
 spring:
   application:
     name: gateway-service
+  main:
+    allow-bean-definition-overriding: true
   cloud:
     gateway:
       routes:
@@ -16,14 +18,14 @@ spring:
             - Path=/specialists/**
           filters:
             - StripPrefix=1
-            - TokenRelay=
+            - TokenRelay
         - id: pacientes-service
           uri: lb://pacientes-service
           predicates:
             - Path=/pacientes/**
           filters:
             - StripPrefix=1
-            - TokenRelay=
+            - TokenRelay
       discovery:
         locator:
           enabled: true
